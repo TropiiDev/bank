@@ -24,6 +24,7 @@ import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
 import dynamic from 'next/dynamic';
+import PlaidLink from './PlaidLink';
 
 const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
@@ -56,7 +57,7 @@ const AuthForm = ({ type }: { type: string }) => {
             city: data.city!,
             state: data.state!,
             postalCode: data.postalCode!,
-            dateOfBirth: data.dob!,
+            dateOfBirth: data.dateOfBirth!,
             ssn: data.ssn!,
             email: data.email,
             password: data.password
@@ -114,6 +115,7 @@ const AuthForm = ({ type }: { type: string }) => {
       </header>
       {user ? (
         <div className="flex flex-col gap-4">
+          <PlaidLink user={user} variant="primary" />
         </div>
       ): (
         <>
@@ -132,7 +134,7 @@ const AuthForm = ({ type }: { type: string }) => {
                     <Field control={form.control} name='postalCode' label="Postal Code" placeholder='Example: 11101' />
                   </div>
                   <div className="flex gap-4">
-                    <Field control={form.control} name='dob' label="Date of Birth" placeholder='YYYY-MM-DD' />
+                    <Field control={form.control} name='dateOfBirth' label="Date of Birth" placeholder='YYYY-MM-DD' />
                     <Field control={form.control} name='ssn' label="SSN" placeholder='Example: 1234' />
                   </div>
                 </>
