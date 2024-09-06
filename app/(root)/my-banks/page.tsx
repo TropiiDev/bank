@@ -12,23 +12,22 @@ const MyBanks = async () => {
 
   return (
     <section className='flex'>
-      <div className='my-banks'>
+      <div className="my-banks">
         <HeaderBox 
           title="My Bank Accounts"
-          subtext="Effortly manage your banking activities."
+          subtext="Effortlessly manage your banking activites."
         />
 
-        <div className='space-y-4'>
-          <h2 className='header-2'>
+        <div className="space-y-4">
+          <h2 className="header-2">
             Your cards
           </h2>
-
-          <div className='flex flex-wrap gap-6'>
+          <div className="flex flex-wrap gap-6">
             {accounts && accounts.data.map((a: Account) => (
               <BankCard 
                 key={accounts.id}
                 account={a}
-                userName={`${loggedIn?.firstName} ${loggedIn?.lastName}`}
+                userName={loggedIn?.firstName}
               />
             ))}
           </div>

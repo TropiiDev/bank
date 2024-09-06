@@ -15,13 +15,13 @@ const Transfer = async () => {
   const accountsData = accounts?.data;
 
   return (
-    <section className='payment-transfer'>
+    <section className="payment-transfer">
       <HeaderBox 
-        title='Payment Transfer'
-        subtext='PLease provide any specific details or notes related to the payment transfer'
+        title="Payment Transfer"
+        subtext="Please provide any specific details or notes related to the payment transfer"
       />
 
-      <section className='size-full pt-5'>
+      <section className="size-full pt-5">
         <PaymentTransferForm accounts={accountsData} />
       </section>
     </section>
